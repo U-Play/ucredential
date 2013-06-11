@@ -16,14 +16,14 @@ module Ucredential
     def self.render 
       av = ActionView::Base.new()
       av.view_paths = ActionController::Base.view_paths
-      pdf_html = av.render layout: 'layouts/credentials.html.erb', 
+      pdf_html = av.render layout: 'ucredential.html.erb', 
         template: "ucredential/print.pdf.erb", 
         margin: {
         top: 20,
         bottom: 20,
         left: 14,
         right: 14
-      }, locals: { :athletes => @users, host: @host }
+      }, locals: { :users => @users, host: @host }
       @pdf = WickedPdf.new.pdf_from_string(pdf_html)
     end
 
@@ -51,9 +51,9 @@ module Ucredential
 end
 
 
-#class ActionView::Base
-#def protect_against_forgery?
-#false
-#end
-#end
+class ActionView::Base
+  def protect_against_forgery?
+    false
+  end
+end
 

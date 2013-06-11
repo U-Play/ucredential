@@ -4,6 +4,8 @@ PATH
     ucredential (0.0.1)
       rails (~> 3.2.13)
       resque
+      rubyzip
+      wicked_pdf
 
 GEM
   remote: http://rubygems.org/
@@ -88,6 +90,7 @@ GEM
       redis-namespace (~> 1.2)
       sinatra (>= 0.9.2)
       vegas (~> 0.1.2)
+    rubyzip (0.9.9)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -106,6 +109,8 @@ GEM
     tzinfo (0.3.37)
     vegas (0.1.11)
       rack (>= 1.0.0)
+    wicked_pdf (0.9.6)
+      rails
 
 PLATFORMS
   ruby

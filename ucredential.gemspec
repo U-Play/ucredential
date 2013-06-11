@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.13"
   s.add_dependency "resque"
+  s.add_dependency "wicked_pdf"
+  s.add_dependency "rubyzip"
 
   s.add_development_dependency "sqlite3"
 end
