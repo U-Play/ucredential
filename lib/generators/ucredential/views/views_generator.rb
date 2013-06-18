@@ -6,7 +6,7 @@ module Ucredential
 
       def stylesheets
         empty_directory 'app/assets/stylesheets/ucredential'
-        copy_file 'assets/stylesheets/ucredential/ucredential.sass'
+        copy_file 'assets/stylesheets/ucredential/ucredential.css.sass', 'app/assets/stylesheets/ucredential/ucredential.css.sass'
       end
 
       def views
