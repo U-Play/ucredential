@@ -50,14 +50,8 @@ module Ucredential
   end
 end
 
-
-module UcredentialHelper user_ids, admin_id, host
-  Resque.enqueue Ucredential::CredentialWorker, user_ids, admin_id, host
-end
-
-class ActionView::Base
-  def protect_against_forgery?
-    false
-  end
-end
-
+# class ActionView::Base
+#   def protect_against_forgery?
+#     false
+#   end
+# end

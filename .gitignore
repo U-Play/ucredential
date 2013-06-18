@@ -9,3 +9,4 @@ spec/dummy/.sass-cache
 spec/dummy/app/views/ucredential/*
 spec/dummy/app/assets/stylesheets/ucredential/*.sass
 *.pdf
+*.rdb
