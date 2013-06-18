@@ -9,15 +9,15 @@ module Ucredential
       @host = host
       @zip = Rails.root.join("public/credentials#{Time.now.strftime("%Y-%m-%d_%H_%M_%S")}.zip")
 
-      render 
+      render
       zip
     end
 
-    def self.render 
+    def self.render
       av = ActionView::Base.new()
       av.view_paths = ActionController::Base.view_paths
-      pdf_html = av.render layout: 'ucredential/ucredential.html.erb', 
-        template: "ucredential/print.pdf.erb", 
+      pdf_html = av.render layout: 'ucredential/ucredential.html.erb',
+        template: "ucredential/print.pdf.erb",
         margin: {
         top: 20,
         bottom: 20,
@@ -45,11 +45,15 @@ module Ucredential
 
     def self.send_mail
       #mail = UserMailer.team_credentials_ready User.find(user_id), Team.find(team_id), "#{host_with_port}/#{zip_name}"
-      #mail.deliver     
+      #mail.deliver
     end
   end
 end
 
+
+module UcredentialHelper user_ids, admin_id, host
+  Resque.enqueue Ucredential::CredentialWorker, user_ids, admin_id, host
+end
 
 class ActionView::Base
   def protect_against_forgery?
