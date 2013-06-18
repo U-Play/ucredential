@@ -16,7 +16,7 @@ module Ucredential
     def self.render 
       av = ActionView::Base.new()
       av.view_paths = ActionController::Base.view_paths
-      pdf_html = av.render layout: 'ucredential.html.erb', 
+      pdf_html = av.render layout: 'ucredential/ucredential.html.erb', 
         template: "ucredential/print.pdf.erb", 
         margin: {
         top: 20,

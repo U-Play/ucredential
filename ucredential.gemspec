@@ -20,6 +20,8 @@ Gem::Specification.new do |s|
   s.add_dependency "resque"
   s.add_dependency "wicked_pdf"
   s.add_dependency "rubyzip"
+  s.add_dependency "sass-rails"
+  s.add_dependency "compass-rails"
 
   s.add_development_dependency "sqlite3"
 end
